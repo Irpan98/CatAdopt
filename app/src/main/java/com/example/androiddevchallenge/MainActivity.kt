@@ -15,12 +15,15 @@
  */
 package com.example.androiddevchallenge
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ui.theme.ListCats
+import com.example.androiddevchallenge.model.Cat
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +40,34 @@ class MainActivity : AppCompatActivity() {
 // Start building your app here!
 @Composable
 fun MyApp() {
-    ListCats()
+    val context = LocalContext.current
+
+    val cats = mutableListOf<Cat>()
+
+    cats.apply {
+        add(Cat("Olly", R.drawable.cat1, "Zwolle, Netherlands"))
+        add(Cat("2", R.drawable.cat2, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat3, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat4, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat5, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat6, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat7, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat8, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat9, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat10, "Zwolle, Netherlands"))
+        add(Cat("3", R.drawable.cat11, "Zwolle, Netherlands"))
+
+    }
+
+    ListCats(cats) {
+
+        Log.d("Hahahah", "dipilih ${it.name}")
+        openDetail(context, it)
+    }
+}
+
+fun openDetail(LocalContext: Context, cat: Cat) {
+    DetailActivity.getInstance(LocalContext, cat)
 }
 
 @Preview("Light Theme", widthDp = 360, heightDp = 640)
@@ -48,10 +78,10 @@ fun LightPreview() {
     }
 }
 
-// @Preview("Dark Theme", widthDp = 360, heightDp = 640)
-// @Composable
-// fun DarkPreview() {
-//    MyTheme(darkTheme = true) {
-//        MyApp()
-//    }
-// }
+@Preview("Dark Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun DarkPreview() {
+    MyTheme(darkTheme = true) {
+        MyApp()
+    }
+}

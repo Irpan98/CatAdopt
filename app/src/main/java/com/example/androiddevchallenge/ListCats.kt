@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.lazy.LazyColumn
@@ -23,17 +24,17 @@ import androidx.compose.material.Divider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.androiddevchallenge.ItemCat
+import com.example.androiddevchallenge.model.Cat
 
-@Preview("list cat")
 @Composable
-fun ListCats(cats: List<String> = listOf("Android", "there", "dia")) {
+fun ListCats(cats: List<Cat>, clickListener: (Cat) -> Unit) {
 
     LazyColumn(modifier = Modifier.fillMaxHeight()) {
         items(cats) { cat ->
             Column {
-                ItemCat(string = cat)
+                ItemCat(cat = cat, modifier = Modifier.clickable {
+                    clickListener(cat)
+                })
                 Divider(color = Color.Black)
             }
         }
