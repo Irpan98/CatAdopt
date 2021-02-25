@@ -1,7 +1,6 @@
-v0.1
-note: still template
 
-# Put title of your app here
+# CatAdopt
+
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
@@ -10,12 +9,13 @@ note: still template
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
-
+This App listing Cat You Can Adopt!
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
-
+really looking forward to jetpack compose. Finnaly its here. 
+better than i expect, I really-really enjoy using jetpack compose
 
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
