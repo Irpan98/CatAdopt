@@ -24,6 +24,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.model.Cat
+import com.example.androiddevchallenge.ui.DetailActivity
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
@@ -46,20 +47,19 @@ fun MyApp() {
 
     cats.apply {
         add(Cat("Olly", R.drawable.cat1, "Zwolle, Netherlands"))
-        add(Cat("2", R.drawable.cat2, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat3, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat4, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat5, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat6, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat7, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat8, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat9, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat10, "Zwolle, Netherlands"))
-        add(Cat("3", R.drawable.cat11, "Zwolle, Netherlands"))
+        add(Cat("Vito", R.drawable.cat2, "Nicosia, Cyprus"))
+        add(Cat("Snowball", R.drawable.cat3, "Zagreb, Croatia"))
+        add(Cat("WorldDestroyer", R.drawable.cat4, "Oslo, Norways"))
+        add(Cat("Dusty", R.drawable.cat5, "Brussels, Belgium"))
+        add(Cat("Tora", R.drawable.cat6, "Jakarta, Indonesia"))
+        add(Cat("Buster", R.drawable.cat7, "New York City, United States"))
+        add(Cat("Shrapnel", R.drawable.cat8, "Caracas, Venezuela"))
+        add(Cat("TigerLilly", R.drawable.cat9, "Tunis, Tunisia"))
+        add(Cat("Skip", R.drawable.cat10, "Kathmandu, Nepal"))
+        add(Cat("first", R.drawable.cat11, "Kuwait City, Kuwait"))
     }
 
     ListCats(cats) {
-
         Log.d("Hahahah", "dipilih ${it.name}")
         openDetail(context, it)
     }
@@ -77,10 +77,10 @@ fun LightPreview() {
     }
 }
 
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun DarkPreview() {
-    MyTheme(darkTheme = true) {
-        MyApp()
-    }
-}
+// @Preview("Dark Theme", widthDp = 360, heightDp = 640)
+// @Composable
+// fun DarkPreview() {
+//     MyTheme(darkTheme = true) {
+//         MyApp()
+//     }
+// }

@@ -31,14 +31,14 @@ fun ListCats(cats: List<Cat>, clickListener: (Cat) -> Unit) {
 
     LazyColumn(modifier = Modifier.fillMaxHeight()) {
         items(cats) { cat ->
-            Column {
+            Column() {
                 ItemCat(
                     cat = cat,
                     modifier = Modifier.clickable {
                         clickListener(cat)
                     }
                 )
-                Divider(color = Color.Black)
+                Divider(color = Color.Gray)
             }
         }
     }
