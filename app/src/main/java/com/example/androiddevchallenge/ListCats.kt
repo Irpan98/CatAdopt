@@ -32,9 +32,12 @@ fun ListCats(cats: List<Cat>, clickListener: (Cat) -> Unit) {
     LazyColumn(modifier = Modifier.fillMaxHeight()) {
         items(cats) { cat ->
             Column {
-                ItemCat(cat = cat, modifier = Modifier.clickable {
-                    clickListener(cat)
-                })
+                ItemCat(
+                    cat = cat,
+                    modifier = Modifier.clickable {
+                        clickListener(cat)
+                    }
+                )
                 Divider(color = Color.Black)
             }
         }

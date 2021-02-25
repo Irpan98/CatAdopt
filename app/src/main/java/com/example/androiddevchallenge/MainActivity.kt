@@ -56,7 +56,6 @@ fun MyApp() {
         add(Cat("3", R.drawable.cat9, "Zwolle, Netherlands"))
         add(Cat("3", R.drawable.cat10, "Zwolle, Netherlands"))
         add(Cat("3", R.drawable.cat11, "Zwolle, Netherlands"))
-
     }
 
     ListCats(cats) {
